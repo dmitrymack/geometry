@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void Circle(int x, int y, int z)
+{
+    printf("circle (%d, %d, %d)\n", x, y, z);
+}
+
 int main()
 {
     int n, *arr_x, *arr_y, *arr_rad;
