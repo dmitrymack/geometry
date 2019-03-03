@@ -19,6 +19,10 @@ int main()
         scanf("%d%d%d", &arr_x[i], &arr_y[i], &arr_rad[i]);
     }
 
+    for (int i = 0; i < n; i++) {
+        printf("%d. ", i + 1);
+        Circle(arr_x[i], arr_y[i], arr_rad[i]);
+    }
     free(arr_x);
     free(arr_y);
     free(arr_rad);
