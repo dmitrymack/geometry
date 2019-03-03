@@ -23,6 +23,7 @@ int main()
         printf("%d. ", i + 1);
         Circle(arr_x[i], arr_y[i], arr_rad[i]);
     }
+
     free(arr_x);
     free(arr_y);
     free(arr_rad);
