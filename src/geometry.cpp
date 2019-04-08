@@ -15,6 +15,8 @@ int main()
 
     circle(arr_cir_x, arr_cir_y, arr_cir_rad, cir_n);
     circle_calculations(arr_cir_rad, cir_n);
+    print_circle(arr_cir_x, arr_cir_y, arr_cir_rad, cir_n);
+
     delete (arr_cir_x);
     delete (arr_cir_y);
     delete (arr_cir_rad);
