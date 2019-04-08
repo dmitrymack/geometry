@@ -5,16 +5,16 @@
 int main()
 {
     int cir_n, *arr_cir_x, *arr_cir_y, *arr_cir_rad;
+
     printf("Input the number of circles -> ");
     scanf("%d", &cir_n);
+
     arr_cir_x = new int[cir_n];
     arr_cir_y = new int[cir_n];
     arr_cir_rad = new int[cir_n];
-    for (int i = 0; i < cir_n; i++) {
-        printf("Input the x, y and radius of %d circle -> ", i + 1);
-        scanf("%d%d%d", &arr_cir_x[i], &arr_cir_y[i], &arr_cir_rad[i]);
-    }
 
+    circle(arr_cir_x, arr_cir_y, arr_cir_rad, cir_n);
+    circle_calculations(arr_cir_rad, cir_n);
     delete (arr_cir_x);
     delete (arr_cir_y);
     delete (arr_cir_rad);
