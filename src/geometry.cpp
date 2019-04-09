@@ -23,6 +23,7 @@ int main()
     arr_tri_x = new int[tri_n * 3];
     arr_tri_y = new int[tri_n * 3];
     triangle(arr_tri_x, arr_tri_y, tri_n);
+    triangle_calculations(arr_tri_x, arr_tri_y, tri_n);
 
     print_circle(arr_cir_x, arr_cir_y, arr_cir_rad, cir_n);
 
