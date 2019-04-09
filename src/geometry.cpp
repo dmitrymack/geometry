@@ -26,6 +26,7 @@ int main()
     triangle_calculations(arr_tri_x, arr_tri_y, tri_n);
 
     print_circle(arr_cir_x, arr_cir_y, arr_cir_rad, cir_n);
+    print_triangle(arr_tri_x, arr_tri_y, tri_n);
 
     delete (arr_cir_x);
     delete (arr_cir_y);
