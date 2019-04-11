@@ -1,5 +1,8 @@
 all: bin/geometry
 
+build/print.o: src/print.cpp
+	g++ src/print.cpp -o build/print.o -c -Wall -Werror -lgraph
+
 build/circle_calculation.o: src/circle_calculation.cpp
 	g++ src/circle_calculation.cpp -o build/circle_calculation.o -c -Wall -Werror
 
