@@ -44,11 +44,20 @@ int main()
 
     print_circle(arr_cir_x, arr_cir_y, arr_cir_rad, cir_n);
     print_triangle(arr_tri_x, arr_tri_y, tri_n);
+    print_polygon(arr_pol_x, arr_pol_y, pol_v, pol_n);
 
-    delete (arr_cir_x);
-    delete (arr_cir_y);
-    delete (arr_cir_rad);
-    delete (arr_tri_x);
-    delete (arr_tri_y);
+    delete[](arr_cir_x);
+    delete[](arr_cir_y);
+    delete[](arr_cir_rad);
+    delete[](arr_tri_x);
+    delete[](arr_tri_y);
+
+    for (int i = 0; i < pol_n; i++) {
+        delete[] arr_pol_x[i];
+        delete[] arr_pol_y[i];
+    }
+    delete[] pol_v;
+    delete[] arr_pol_x;
+    delete[] arr_pol_y;
     return 0;
 }
