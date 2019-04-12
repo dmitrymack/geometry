@@ -24,7 +24,7 @@ build/polygon.o: src/polygon.cpp
 build/geometry.o: src/geometry.cpp
 	g++ src/geometry.cpp -o build/geometry.o -c -Wall -Werror
 
-bin/geometry: build/geometry.o build/circle.o build/triangle.o build/circle_calculation.o build/triangle_calculation.o build/polygon_calculation.o build/polygon.o build/print.o
+bin/geometry: build/print.o build/circle.o build/triangle.o build/circle_calculation.o build/triangle_calculation.o build/polygon_calculation.o build/polygon.o build/geometry.o
 	g++ build/geometry.o build/circle.o build/triangle.o build/circle_calculation.o build/triangle_calculation.o build/polygon.o build/polygon_calculation.o build/print.o -Wall -Werror -o bin/geometry -lgraph
 
 clean:
