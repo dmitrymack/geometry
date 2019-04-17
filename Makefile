@@ -1,5 +1,7 @@
 all: bin/geometry
 
+.PHONY: clean
+
 build/print.o: src/print.cpp
 	g++ src/print.cpp -o build/print.o -c -Wall -Werror -lgraph
 

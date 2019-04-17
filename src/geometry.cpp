@@ -40,7 +40,7 @@ int main()
         arr_pol_y[i] = new int[pol_v[i]];
     }
     polygon(arr_pol_x, arr_pol_y, pol_v, pol_n);
-    polygon_calculation(arr_pol_x, arr_pol_y, pol_v, pol_n);
+    polygon_calculations(arr_pol_x, arr_pol_y, pol_v, pol_n);
 
     print_circle(arr_cir_x, arr_cir_y, arr_cir_rad, cir_n);
     print_triangle(arr_tri_x, arr_tri_y, tri_n);
