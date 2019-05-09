@@ -14,7 +14,7 @@ void triangle_calculations(int* arr_tri_x, int* arr_tri_y, int tri_n)
         x[i + 2] = arr_tri_x[i] - arr_tri_x[i + 2];
         y[i + 2] = arr_tri_y[i + 2] - arr_tri_y[i];
         a = sqrt(x[i] * x[i] + y[i] * y[i]);
-        b = sqrt(x[i + 1] * x[i + 1] + y[i + 1] * y[+1]);
+        b = sqrt(x[i + 1] * x[i + 1] + y[i + 1] * y[i + 1]);
         c = sqrt(x[i + 2] * x[i + 2] + y[i + 2] * y[i + 2]);
         P = a + b + c;
         S = sqrt(P / 2 * (P / 2 - a) * (P / 2 - b) * (P / 2 - c));
