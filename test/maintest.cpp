@@ -1,11 +1,21 @@
 #include "gtest/gtest.h"
 
-int add(int value1, int value2)
+double P, S;
+
+void circle_calculations(int rad)
 {
-    return (value1 + value2);
+    double Pi = 3.14;
+    P = 2 * Pi * rad;
+    S = Pi * rad * rad;
 }
 
-TEST(AddTest, PositiveNos)
+TEST(CalculationsTest, CirclePer)
 {
-    EXPECT_EQ(16, add(8, 8));
+    circle_calculations(1);
+    EXPECT_EQ(6.28, P);
+}
+
+TEST(CalculationsTest, CircleArea)
+{
+    EXPECT_EQ(3.14, S);
 }
