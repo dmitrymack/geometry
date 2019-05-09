@@ -32,8 +32,12 @@ geometry: build/src/print.o build/src/circle.o build/src/triangle.o build/src/ci
 build/test/maintest.o: test/maintest.cpp
 	g++ test/maintest.cpp build/test/maintest.o -lgtest_main -lgtest -pthread -o -c -Wall -Werror
 
-tests:
+tests: 
 	g++ test/maintest.cpp -lgtest_main -lgtest -pthread -o bin/maintest -Wall -Werror
 
 clean_src:
 	rm -rf build/src/*.o bin/geometry
+
+clean_test:
+	rm -rf build/test/*.o bin/maintest
+
