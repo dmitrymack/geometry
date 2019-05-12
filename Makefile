@@ -23,11 +23,14 @@ build/src/triangle_calculation.o: src/triangle_calculation.cpp
 build/src/polygon.o: src/polygon.cpp
 	g++ src/polygon.cpp -o build/src/polygon.o -c -Wall -Werror
 
+build/src/intersect.o: src/intersect.cpp
+	g++ src/intersect.cpp -o build/src/intersect.o -c -Wall -Werror
+
 build/src/geometry.o: src/geometry.cpp
 	g++ src/geometry.cpp -o build/src/geometry.o -c -Wall -Werror
 
-geometry: build/src/print.o build/src/circle.o build/src/triangle.o build/src/circle_calculation.o build/src/triangle_calculation.o build/src/polygon_calculation.o build/src/polygon.o build/src/geometry.o
-	g++ build/src/geometry.o build/src/circle.o build/src/triangle.o build/src/circle_calculation.o build/src/triangle_calculation.o build/src/polygon.o build/src/polygon_calculation.o build/src/print.o -Wall -Werror -o bin/geometry -lgraph
+geometry: build/src/print.o build/src/intersect.o build/src/circle.o build/src/triangle.o build/src/circle_calculation.o build/src/triangle_calculation.o build/src/polygon_calculation.o build/src/polygon.o build/src/geometry.o
+	g++ build/src/geometry.o build/src/intersect.o build/src/circle.o build/src/triangle.o build/src/circle_calculation.o build/src/triangle_calculation.o build/src/polygon.o build/src/polygon_calculation.o build/src/print.o -Wall -Werror -o bin/geometry -lgraph
 
 build/test/maintest.o: test/maintest.cpp
 	g++ test/maintest.cpp build/test/maintest.o -lgtest_main -lgtest -pthread -o -c -Wall -Werror

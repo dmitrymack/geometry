@@ -19,6 +19,7 @@ int main()
 
     circle(arr_cir_x, arr_cir_y, arr_cir_rad, cir_n);
     circle_calculations(arr_cir_rad, cir_n);
+    intersect(arr_cir_x, arr_cir_y, arr_cir_rad, cir_n);
 
     printf("\nInput quanity of triangles -> ");
     scanf("%d", &tri_n);
