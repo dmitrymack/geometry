@@ -173,5 +173,5 @@ TEST(Polygon, Per_3)
 
 TEST(Polygon, Area_3)
 {
-    EXPECT_DOUBLE_EQ(15.5, S);
+    EXPECT_DOUBLE_EQ(15, S);
 }

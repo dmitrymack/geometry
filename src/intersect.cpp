@@ -7,8 +7,12 @@ void intersect(int* arr_cir_x, int* arr_cir_y, int* arr_rad, int cir_n)
     int x, y, z, h, h1, k, k1, inter[cir_n][cir_n] = {0};
     for (int i = 0; i < cir_n; i++)
         for (int j = i + 1; j < cir_n; j++) {
-            x = abs(arr_cir_x[i] - arr_cir_x[j]);
-            y = abs(arr_cir_y[i] - arr_cir_y[j]);
+            x = arr_cir_x[i] - arr_cir_x[j];
+            if (x < 0)
+                x = -x;
+            y = arr_cir_y[i] - arr_cir_y[j];
+            if (y < 0)
+                y = -y;
             z = arr_rad[i] + arr_rad[j];
             h = arr_cir_x[i] + arr_rad[i];
             k = arr_cir_y[i] + arr_rad[i];
