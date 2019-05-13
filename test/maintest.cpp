@@ -80,98 +80,98 @@ void polygon_calculations(int* pol_x, int* pol_y, int poly)
 TEST(Circle, Per_1)
 {
     circle_calculations(1);
-    EXPECT_EQ(6.28, P);
+    EXPECT_DOUBLE_EQ(6.28, P);
 }
 
 TEST(Circle, Area_1)
 {
-    EXPECT_EQ(3.14, S);
+    EXPECT_DOUBLE_EQ(3.14, S);
 }
 
 TEST(Circle, Per_2)
 {
     circle_calculations(9);
-    EXPECT_EQ(56.52, P);
+    EXPECT_DOUBLE_EQ(56.52, P);
 }
 
 TEST(Circle, Area_2)
 {
-    EXPECT_EQ(254.34, S);
+    EXPECT_DOUBLE_EQ(254.34, S);
 }
 
 TEST(Circle, Per_3)
 {
     circle_calculations(13);
-    EXPECT_EQ(81.64, P);
+    EXPECT_DOUBLE_EQ(81.64, P);
 }
 
 TEST(Circle, Area_3)
 {
-    EXPECT_EQ(530.66, S);
+    EXPECT_DOUBLE_EQ(530.66, S);
 }
 
 TEST(Triangle, Per_1)
 {
     triangle_calculations(tri_x1, tri_y1);
-    EXPECT_EQ(12, P);
+    EXPECT_DOUBLE_EQ(12, P);
 }
 
 TEST(Triangle, Area_1)
 {
-    EXPECT_EQ(6, S);
+    EXPECT_DOUBLE_EQ(6, S);
 }
 
 TEST(Triangle, Per_2)
 {
     triangle_calculations(tri_x2, tri_y2);
-    EXPECT_EQ(30, P);
+    EXPECT_DOUBLE_EQ(30, P);
 }
 
 TEST(Triangle, Area_2)
 {
-    EXPECT_EQ(30, S);
+    EXPECT_DOUBLE_EQ(30, S);
 }
 
 TEST(Triangle, Per_3)
 {
     triangle_calculations(tri_x3, tri_y3);
-    EXPECT_EQ(24, P);
+    EXPECT_DOUBLE_EQ(24, P);
 }
 
 TEST(Triangle, Area_3)
 {
-    EXPECT_EQ(24, S);
+    EXPECT_DOUBLE_EQ(24, S);
 }
 
 TEST(Polygon, Per_1)
 {
     polygon_calculations(pol_x1, pol_y1, poly1);
-    EXPECT_EQ(60, P);
+    EXPECT_DOUBLE_EQ(60, P);
 }
 
 TEST(Polygon, Area_1)
 {
-    EXPECT_EQ(150, S);
+    EXPECT_DOUBLE_EQ(150, S);
 }
 
 TEST(Polygon, Per_2)
 {
     polygon_calculations(pol_x2, pol_y2, poly2);
-    EXPECT_EQ(12, P);
+    EXPECT_DOUBLE_EQ(12, P);
 }
 
 TEST(Polygon, Area_2)
 {
-    EXPECT_EQ(9, S);
+    EXPECT_DOUBLE_EQ(9, S);
 }
 
 TEST(Polygon, Per_3)
 {
     polygon_calculations(pol_x3, pol_y3, poly3);
-    EXPECT_EQ(29.8622, P);
+    EXPECT_DOUBLE_EQ(29.862204027770847, P);
 }
 
 TEST(Polygon, Area_3)
 {
-    EXPECT_EQ(15.5, S);
+    EXPECT_DOUBLE_EQ(15.5, S);
 }

@@ -2,6 +2,38 @@ language: c++
 
 dist: xenial
 
-script:
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      
+before_script:
   - git ls-files src/ | xargs clang-format -i && git diff --exit-code
+  - sudo apt-get install libgtest-dev
+  - sudo apt-get install cmake
+  - cd /usr/src/gtest
+  - sudo cmake CMakeLists.txt
+  - sudo make
+  - sudo cp *.a /usr/lib
+  - sudo add-apt-repository universe
+  - sudo apt update
+  - sudo apt install build-essential
+  - sudo echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe" >> /etc/apt/sources.list
+  - sudo echo "deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main universe" >> /etc/apt/sources.list
+  - sudo apt update
+  - sudo apt install libsdl-image1.2 libsdl-image1.2-dev guile-2.0 guile-2.0-dev libsdl1.2debian libart-2.0-dev libaudiofile-dev libesd0-dev libdirectfb-dev libdirectfb-extra libfreetype6-dev libxext-dev x11proto-xext-dev libfreetype6 libaa1 libaa1-dev libslang2-dev libasound2 libasound2-dev
+  - cd ../../../home/travis/build/dmitrymack/geometry
+  - wget http://download.savannah.gnu.org/releases/libgraph/libgraph-1.0.2.tar.gz
+  - tar zxf libgraph-1.0.2.tar.gz
+  - cd libgraph-1.0.2
+  - ./configure --disable-guile
   - make
+  - sudo make install
+  - sudo cp /usr/local/lib/libgraph.* /usr/lib
+      
+script:
+  - cd /home/travis/build/dmitrymack/geometry
+  - make test
+  - make all
+  - ./bin/maintest
+
