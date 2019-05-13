@@ -1,5 +1,9 @@
 all: geometry
 
+.PHONY: test
+
+test: bin/maintest
+
 .PHONY: clean
 
 build/src/print.o: src/print.cpp
@@ -33,10 +37,10 @@ geometry: build/src/print.o build/src/intersect.o build/src/circle.o build/src/t
 	g++ build/src/geometry.o build/src/intersect.o build/src/circle.o build/src/triangle.o build/src/circle_calculation.o build/src/triangle_calculation.o build/src/polygon.o build/src/polygon_calculation.o build/src/print.o -Wall -Werror -o bin/geometry -lgraph
 
 build/test/maintest.o: test/maintest.cpp
-	g++ test/maintest.cpp build/test/maintest.o -lgtest_main -lgtest -pthread -o -c -Wall -Werror
+	g++ test/maintest.cpp -o build/test/maintest.o -lgtest_main -lgtest -pthread -c -Wall -Werror
 
-tests: 
-	g++ test/maintest.cpp -lgtest_main -lgtest -pthread -o bin/maintest -Wall -Werror
+bin/maintest: build/test/maintest.o
+	g++ build/test/maintest.o -lgtest_main -lgtest -pthread -o bin/maintest -Wall -Werror
 
 clean_src:
 	rm -rf build/src/*.o bin/geometry
