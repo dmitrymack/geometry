@@ -33,10 +33,14 @@ void polygon_calculations(
                 Sl += arr_pol_x[i][pol_v[i] - 1] * arr_pol_y[i][0];
                 Sr += arr_pol_x[i][0] * arr_pol_y[i][pol_v[i] - 1];
             }
-            Sl += abs(l[j]);
-            Sr += abs(r[j]);
+            if (l[j] < 0)
+                l[j] = -l[j];
+            if (r[j] < 0)
+                r[j] = -r[j];
+            Sl += l[j];
+            Sr += r[j];
         }
-        S = abs(Sl - Sr) / 2;
+        S = (Sl - Sr) / 2;
         printf("Area of polygon #%d = %.2f\n", i + 1, S);
     }
 }
