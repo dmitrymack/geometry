@@ -113,7 +113,7 @@ TEST(Circle, Area_3)
 TEST(Triangle, Per_1)
 {
     triangle_calculations(tri_x1, tri_y1);
-    EXPECT_DOUBLE_EQ(12, P);
+    EXPECT_DOUBLE_EQ(13, P);
 }
 
 TEST(Triangle, Area_1)
